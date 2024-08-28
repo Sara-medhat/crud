@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/demo1.css">
+</head>
+
+<body class="">
+  <!-- <div id="demo">
+      <h1>hi</h1>
+    </div> -->
+
+
+  <section></section>
+
+
+  <div class="container m-4">
+
+
+    <div id="form-groug">
+
+     <h1>product management system</h1>
+     <!-- <button class="btn btn-warning d-none" onclick="show2()" id="add">add</button>
+     <button class="btn btn-success " onclick="show1()" id="update"> update </button> -->
+
+
+
+
+      
+
+      <div class="form-group m-4"><label for="productname">productName</label>
+        <input type="text" class="form-control" id="productname" placeholder="Enter product name">
+      </div>
+
+
+      <div class="form-group m-4"><label for="productprice">productprice</label>
+        <input type="text" class="form-control" id="productprice" placeholder="Enter product price">
+      </div>
+
+
+      <div class="form-group m-4"><label for="productcateg">product category</label>
+        <input type="text" class="form-control" id="productcateg" placeholder="Enter product category">
+      </div>
+
+      <div class="form-group m-4"><label for="productdesc">product description</label>
+        <input type="text" class="form-control" id="productdesc" placeholder="Enter you opinion about product">
+      </div>
+
+      <button onclick="addproduct()" class=" btn btn-outline-primary">add product </button>
+    
+
+      <button class="btn btn-success d-none" id="savebtn" onclick="saveupdate()">save change</button>
+
+
+      <input type="text" oninput="searchProduct(this.value)" class="form-control my-4" placeholder="search with product name">
+
+</div>
+    <table class="table  text-center my-5 text-white">
+      <thead>
+        <th>index </th>
+        <th> product name</th>
+        <th>product price </th>
+        <th>product category </th>
+        <th>product desc </th>
+        <th> update</th>
+        <th>delete </th>
+
+      </thead>
+
+      <tbody id="data">
+<!-- <tr>
+  
+  <td>dxx</td>
+  <td>z</td>
+  <td>z</td>
+  <td>z</td>
+  <td>z</td>
+  <td><button class="btn btn-warning">update</button></td>
+  <td><button class="btn btn-danger">delete</button></td>
+
+
+
+</tr> -->
+      </tbody>
+
+
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+  <!-- <table class="table text-center">
+<thead><th>index</th>
+
+<th>products name</th>
+<th>prodects price</th>
+
+
+
+
+</thead >
+
+<tbody id="demo"></tbody>
+
+
+</table>
+
+ -->
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/demo1.js"></script>
+</body>
+
+</html>

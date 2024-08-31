@@ -11,7 +11,7 @@
 
 <body class="">
   <!-- <div id="demo">
-      <h1>hi</h1>
+    
     </div> -->
 
 
@@ -23,7 +23,7 @@
 
     <div id="form-groug">
 
-     <h1>product management system</h1>
+     <h1>product <span class="text-warning">Management</span> system</h1>
      <!-- <button class="btn btn-warning d-none" onclick="show2()" id="add">add</button>
      <button class="btn btn-success " onclick="show1()" id="update"> update </button> -->
 
@@ -33,12 +33,14 @@
       
 
       <div class="form-group m-4"><label for="productname">productName</label>
-        <input type="text" class="form-control" id="productname" placeholder="Enter product name">
+        <input oninput="validatename()" type="text" class="form-control" id="productname" placeholder="Enter product name">
+      <p id="invalidname" class="text-danger d-none">please enter name</p>
+      
       </div>
 
 
       <div class="form-group m-4"><label for="productprice">productprice</label>
-        <input type="text" class="form-control" id="productprice" placeholder="Enter product price">
+        <input type="number" class="form-control" id="productprice" placeholder="Enter product price">
       </div>
 
 
@@ -72,19 +74,10 @@
       </thead>
 
       <tbody id="data">
-<!-- <tr>
-  
-  <td>dxx</td>
-  <td>z</td>
-  <td>z</td>
-  <td>z</td>
-  <td>z</td>
-  <td><button class="btn btn-warning">update</button></td>
-  <td><button class="btn btn-danger">delete</button></td>
 
 
 
-</tr> -->
+
       </tbody>
 
 

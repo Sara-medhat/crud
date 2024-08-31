@@ -100,21 +100,26 @@ function localStorageupdate() {
 function addproduct() {
 
 
-  var product = {
+  if(validatename() == true){
+    var product = {
 
-    name: productname.value,
-    price: productprice.value,
-    categ: productcatag.value,
-    desc: productdesc.value
+      name: productname.value,
+      price: productprice.value,
+      categ: productcatag.value,
+      desc: productdesc.value
+
+
+    }
+
+    productslist.push(product);
+    localStorageupdate();
+    showProducts(productslist);
+    validatename()
+    clearinputs();
+    savebtn.classList.add("d-none")
 
   }
-
-  productslist.push(product);
-  localStorageupdate();
-  console.log(productslist);
-  showProducts(productslist);
-  clearinputs();
-};
+}
 
 function showProducts(data) {
   var caronta = ``;
@@ -122,7 +127,7 @@ function showProducts(data) {
     caronta += ` 
       <tr>
       <td>${i}</td>
-      <td>${data[i].name}</td>
+      <td>${data[i].newname ? data[i].newname : data[i].name}</td>
       <td>${data[i].price}</td>
       <td>${data[i].categ}</td>
       <td>${data[i].desc}</td>
@@ -136,12 +141,8 @@ function showProducts(data) {
 }
 
 
-
-
 var add = document.getElementById("add")
 var update = document.getElementById("update")
-
-
 
 
 function deleteproduct(index) {
@@ -160,8 +161,6 @@ function clearinputs() {
 
 
 }
-
-
 
 
 function updateProduct(index) {
@@ -200,13 +199,34 @@ function searchProduct(data) {
 
     if (productslist[i].name.toLowerCase().includes(data.toLowerCase())) {
 
+      productslist[i].newname = productslist[i].name.toLowerCase().replaceAll(data.toLowerCase(), `<span class="text-warning">${data.toLowerCase()}</span>`)
+
+      console.log("product l", productslist);
 
       newprodcutlist.push(productslist[i]);
-
       console.log("founded", productslist[i]);
     }
     showProducts(newprodcutlist)
-
+    console.log("new pro", newprodcutlist);
 
   }
 }
+
+
+function validatename() {
+
+  var regex = /\w{4}/
+
+
+
+  if (regex.test(productname.value)) {
+    productname.style.border= "none"
+    document.getElementById("invalidname").classList.add("d-none")
+   
+   return true
+  }
+  else { 
+    productname.style.border= "5px solid red"
+    document.getElementById("invalidname").classList.remove("d-none")
+    return false;
+}}
